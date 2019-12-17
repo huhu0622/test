@@ -1,0 +1,226 @@
+.garbage-program{
+    height: 100vh;
+    background: #32A060;
+}
+.custom-header .custom-header-title{
+    color: #fff;
+}
+.result_box{
+    background: #fff;
+    border-top-left-radius: 30rpx;
+    border-top-right-radius: 30rpx;
+    height: calc(100vh - 150px);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.photo_line .wrong,.photo_line .goon{
+    text-align: center;
+    padding-top: 20rpx;
+}
+.photo_line .wrong{
+  color: #FF7448;
+}
+.photo_line .wrong image{
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  margin-right: 14rpx;
+  position:relative;
+  top:-4rpx;
+}
+.photo_line .goon{
+  color: #31A060;
+}
+.photo_line .goon image{
+  width: 42rpx;
+  height: 38rpx;
+  vertical-align: middle;
+  margin-right: 14rpx;
+  position:relative;
+  top:-4rpx;
+}
+.photo_line .photo{
+    width: 250rpx;
+    height: 250rpx;
+    background: #fff;
+    padding: 6rpx;
+    position: relative;
+    top: -60rpx;
+    text-align: center;
+    border-radius: 30rpx;
+    margin: 0 auto;
+    box-shadow: 0rpx 0rpx 10rpx rgba(0, 0, 0, .16);
+}
+.photo_line .photo image{
+    width: 100%;
+}
+.photo > view{
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 30rpx;
+}
+.photo image{
+    margin-top: -50%
+}
+
+.photo_name{
+    text-align: center;
+    clear: both;
+    position: relative;
+    top: -30rpx;
+}
+.photo_name view:nth-child(1){
+    color: #999;
+    font-size: 32rpx;
+}
+.photo_name view:nth-child(2){
+    color: #333;
+    font-size: 60rpx;
+}
+.photo_name view:nth-child(3){
+    color: #999;
+    font-size: 32rpx;
+}
+.computer_result > view:nth-child(1){
+    margin-bottom: 28rpx;
+    text-align: center;
+}
+.computer_result > view:nth-child(1) text{
+    background: #008BDC;
+    color: #fff;
+    width: 356rpx;
+    height: 88rpx;
+    display: inline-block;
+    font-size: 60rpx;
+    border-radius: 40rpx;
+    line-height: 30rpx;
+}
+.computer_result .info{
+    width: 90%;
+    padding: 30rpx 0;
+    margin: 0 auto;
+    font-size: 32rpx;
+    border-top: 1px dashed #ccc;
+    border-bottom: 1px dashed #ccc;
+    text-align: left;
+    color: #999;
+}
+view.info image{
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  margin:0 -5rpx 0 10rpx;
+}
+.computer_result .info_1{
+  color: #333;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.computer_result .info view:nth-child(1){
+    color: #999;
+}
+
+
+.person_result{
+    position: absolute;
+    top: 420rpx;
+    left: 0;
+    z-index: 1;
+    background: #fff;
+    padding-top: 20rpx;
+}
+.person_result .radio_row{
+    margin-bottom: 30rpx;
+}
+.person_result .radio{
+    background: #5AD28C;
+    width: 238rpx;
+    height: 78rpx;
+    line-height: 78rpx;
+    margin: 0 auto;
+    color: #fff;
+    border-radius: 40rpx;
+    padding-left: 40rpx;
+    margin-bottom: 52rpx;
+}
+.person_result .radio .van-radio__label{
+    color: #fff;
+}
+.radio image{
+  width: 36rpx;
+  height: 36rpx;
+  vertical-align: middle;
+  position: relative;
+  top: 17rpx;
+}
+.person_result .submit_box{
+    border-top: 1px dashed #ccc;
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 88rpx;
+    text-align: center;
+}
+.person_result .submit_box button:nth-child(1){
+    background: #1C8347;
+    width: 384rpx;
+    height: 120rpx;
+    display: inline-block;
+    color: #fff;
+    font-size: 48rpx;
+    border-radius: 20rpx;
+    margin-right: 32rpx;
+}
+.person_result .submit_box button:nth-child(2){
+    background: #C5C5C5;
+    width: 190rpx;
+    height: 120rpx;
+    display: inline-block;
+    color: #fff;
+    font-size: 48rpx;
+    border-radius: 20rpx;
+}
+
+.item-circle {
+  display: inline-block;
+  width: 35rpx;
+  height: 35rpx;
+  border-radius: 50%;
+  border: 1px solid #0f7038;
+  margin-right: 16rpx;
+  background: #fff;
+  position: relative;
+  top: 7rpx;
+}
+
+.item-circle .image{
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.active-select .image{
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: -7rpx;
+}
+
+.radio view:last-child {
+  line-height: 78rpx;
+}
+
+.computer_result image{
+  width: 62rpx;
+  height: 70rpx;
+  vertical-align: middle;
+  margin-right: 16rpx;
+  position: relative;
+  top: -5rpx;
+}

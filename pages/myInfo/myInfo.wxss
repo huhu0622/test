@@ -1,0 +1,153 @@
+/* pages/myInfo/myInfo.wxss */
+.custom-header{
+  background: #fff;
+}
+.line {
+    box-sizing: border-box;
+}
+
+.line-1 {
+    padding: 50rpx 0 50rpx 30rpx;
+    font-size: 50rpx;
+}
+
+.grey {
+    height: 5rpx;
+    background: #fefefe;
+}
+
+.line-2 {
+    padding: 34rpx 60rpx;
+    box-shadow: 0 3rpx 6rpx 6rpx rgba(245, 245, 245,.6);
+    height: 270rpx;
+    box-sizing: border-box;
+}
+.login-btn{
+  height: 92rpx;
+  line-height: 92rpx;
+  margin-top: 55rpx;
+}
+.line-2 .left, .line-2 .right {
+    float: left;
+}
+
+.line-2 .left {
+    margin-right: 30rpx;
+    width: 30%;
+}
+
+.line-2 .right {
+    padding-top: 8rpx;
+    width: 60%;
+}
+
+.line-2 .left image {
+    width: 190rpx;
+    height: 190rpx;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    vertical-align: center;
+}
+
+.personal-name {
+    font-size: 48rpx;
+    font-weight: bold;
+    margin-bottom: 10rpx;
+}
+
+.ranking-box {
+    color: #999;
+    font-size: 30rpx;
+}
+
+.ranking-num {
+    font-size: 44rpx;
+    color: #32a060;
+    padding: 0 24rpx 0 10rpx;
+}
+
+.ranking-box image {
+    width: 30rpx;
+    height: 29rpx;
+}
+
+.description {
+    font-size: 20rpx;
+    color: #ccc;
+}
+
+.line-3, .line-4 {
+    margin-top: 40rpx;
+    display: flex;
+    padding: 60rpx 0;
+    box-shadow: 0 15rpx 10rpx 10rpx rgba(245, 245, 245,.6);
+}
+
+.line-3 .item {
+    flex: 1;
+    color: #666;
+    text-align: center;
+    position: relative;
+}
+
+/* .line-3 .item text {
+    font-size: 56rpx;
+} */
+
+.line-3 .item>view {
+    font-size: 24rpx;
+    margin-top: 30rpx;
+}
+
+.line-3 .item .oblique-line {
+    position: absolute;
+    width: 1px;
+    height: 130%;
+    background: #dadada;
+    transform: rotate(10deg);
+    right: -15rpx;
+    top: -15rpx;
+    margin-top: 0;
+}
+
+.line-4 {
+    padding: 60rpx 34rpx;
+    box-sizing: border-box;
+}
+
+.classification-item {
+    box-sizing: border-box;
+    float: left;
+    width: 50%;
+    padding: 0 20rpx;
+    margin-bottom: 30rpx;
+}
+
+.classification-item>view {
+    border-radius: 8px;
+    padding-top: 30rpx;
+    background: #f6eee7;
+    box-shadow: 0 5rpx 5rpx 5rpx rgb(245, 245, 245);
+    text-align: center;
+}
+
+.classification-item>view image {
+    width: 100%;
+}
+
+.classification-title {
+    font-size: 26rpx;
+    color: #666;
+    margin: 24rpx 0;
+}
+
+.shopcart {
+    font-size: 24rpx;
+    color: #ababab;
+    padding-bottom: 30rpx;
+}
+
+.shopcart image {
+    width: 79rpx;
+    height: 55rpx;
+}

@@ -1,0 +1,62 @@
+.index-line-4 {
+    display: flex;
+}
+
+.index-line-4>view {
+    flex: 1;
+    text-align: center;
+}
+
+.knowledge image {
+    width: 33rpx;
+    height: 50rpx;
+    vertical-align: middle;
+    margin-right: 15rpx;
+}
+
+.mine-info image {
+    width: 45rpx;
+    height: 49rpx;
+    vertical-align: middle;
+    margin-right: 15rpx;
+}
+
+.content{
+    padding-top: 128rpx;
+    position: relative;
+}
+.content image{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1
+}
+.content .info{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    padding-left: 62rpx
+}
+.content .info .title{
+    margin-top: 134rpx;
+    color: #fff;
+}
+.content .info .title view:nth-child(1){
+    font-size: 65rpx;
+}
+.content .info .title view:nth-child(2){
+    font-size: 42rpx;
+    /* margin-top: 27rpx; */
+}
+.content .info .title view:nth-child(3){
+    font-size: 33rpx;
+    margin-top: 31rpx;
+}
+
+
+
+
+

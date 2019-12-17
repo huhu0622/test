@@ -1,0 +1,104 @@
+<cover-view class='headBg'>
+    <cover-image src="../../assets/images/png/photo_header_bg.png"></cover-image>
+</cover-view>
+<!-- 自定义头部 -->
+<cover-view bindtap='goBack' class='custom-header' style="height:{{headerHeight}}px;">
+    <cover-view class='custom-header-box' style="top:{{headerBottom}}px;">
+        <cover-view class='custom-header-goback'>
+            <cover-image class='back_icon' src="../../assets/images/png/goBack_white.png"></cover-image>
+        </cover-view>
+        <cover-view class='custom-header-image'>
+            <cover-image class='photo_icon' src="../../assets/images/png/sheshichakan.png"></cover-image>
+        </cover-view>
+        <cover-view class='custom-header-title'>设施查看</cover-view>
+    </cover-view>
+</cover-view>
+<!-- 功能按钮 -->
+<cover-view class='mapping-body'>
+    <cover-view class='function-btn clear'>
+        <cover-view class='left-function'>
+            <cover-view class='left-item' bindtap='goCheck'>
+                <cover-view class='left-img-box'>
+                    <cover-image src="../../assets/images/png/mapping.png"></cover-image>
+                </cover-view>
+                <cover-view class='left-text'>打点</cover-view>
+            </cover-view>
+            <cover-view class='left-item' bindtap='goPhoto'>
+                <navigator url='/pages/photoRecognition/photoRecognition'>
+                    <cover-view class='left-img-box'>
+                        <cover-image src="../../assets/images/png/photo_white.png"></cover-image>
+                    </cover-view>
+                    <cover-view class='left-text'>拍照</cover-view>
+                </navigator>
+            </cover-view>
+            <cover-view class='left-item' bindtap='goVoice'>
+                <cover-view class='left-img-box'>
+                    <cover-image src="../../assets/images/png/yuyin.png"></cover-image>
+                </cover-view>
+                <cover-view class='left-text'>语音</cover-view>
+            </cover-view>
+        </cover-view>
+        <cover-view class="right-function" bindtap="homeFn">
+          <cover-image src="../../assets/images/png/local.png" mode="widthFix"></cover-image>
+          <cover-view style="color:transparent;">查看</cover-view>
+        </cover-view>
+    </cover-view>
+</cover-view>
+<!-- 我要搜索 -->
+<cover-view class='dot clear' bindtap='showSearch'>
+    <cover-view>我要搜索</cover-view>
+    <cover-image src="../../assets/images/png/search.png"></cover-image>
+</cover-view>
+<!-- 搜索 -->
+<cover-view class="dot-click clear" wx:if="{{showDotClick}}">
+  <cover-view class='green-line'></cover-view>
+    <cover-view class='search-box' bindtap='focusInput'>
+        <cover-view class='input-text'>{{searchContent || '请输入街道/参照建筑/地标'}} </cover-view>
+        <input focus='{{inputFocus}}' confirm-type="search" class='input' value='{{searchContent}}' bindinput='input' bindconfirm="inputSearch"></input>
+        <cover-image bindtap='inputSearch' src="../../assets/images/png/search_green.png"></cover-image>
+    </cover-view>
+    <cover-view style="max-height:540rpx; overflow-y:scroll;margin-top:30rpx;">
+        <cover-view wx:for="{{ resultList }}" wx:key="{{ key }}" style="margin-bottom:32rpx" catchtap='gotoPoint' data-lng="{{ item.location.lng }}" data-lat="{{ item.location.lat }}">
+            <cover-view style="white-space:normal;">{{ item.title }}</cover-view>
+            <cover-view style="white-space:normal;font-size:28rpx;margin-top:5rpx;color:#5AD28C;">{{ item.address }}</cover-view>
+        </cover-view>
+    </cover-view>
+</cover-view>
+<!-- 弹出框 -->
+<cover-view class='alert-box' wx:if="{{ showMark }}">
+    <cover-view class='classify-pic'>
+        <cover-image src="../../assets/images/png/lajiicon{{ trashInfo.Trash_TypeId }}.png"></cover-image>
+    </cover-view>
+    <cover-view class='alert'>
+        <cover-image bindtap='closeMark' class='close-pic' src="../../assets/images/png/close.png"></cover-image>
+        <cover-view class='alert-line-1'>
+            <cover-view class='alert-title'>{{ trashInfo.Trash_Type_Name }}</cover-view>
+            <cover-view class='alert-description'>位置点</cover-view>
+            <cover-view class='alert-points'>{{ trashInfo.Address }}</cover-view>
+        </cover-view>
+        <cover-image mode="widthFix" style="width:100%;" src="../../assets/images/png/xuxian.png"></cover-image>
+        <cover-view class='alert-line-2 clear'>
+            <cover-view class='marker'>{{ trashInfo.UserName }} 标注于 {{ trashInfo.Add_Time }}</cover-view>
+            <cover-view class='right clear {{ trashInfo.Praise == 1 ? "zan-bg" : "calcel-zan" }}' data-trashid = "{{ trashInfo.Id }}" data-isagree="1" data-praise="{{ trashInfo.Praise }}" bindtap='addPraiseUrl'>
+                <cover-image src="../../assets/images/png/zan.png"></cover-image>
+                <cover-view>{{ trashInfo.PraiseNum }}</cover-view>
+            </cover-view>
+            <cover-view class='wrong clear {{ trashInfo.Praise == 2 ? "zan-bg" : "calcel-zan"}}' data-trashid = "{{ trashInfo.Id }}" data-isagree="2" data-praise="{{ trashInfo.Praise }}" bindtap='addPraiseUrl'>
+                <cover-image src="../../assets/images/png/zan.png"></cover-image>
+                <cover-view>{{ trashInfo.NoPraiseNum }}</cover-view>
+            </cover-view>
+        </cover-view>
+        <cover-image mode="widthFix" style="width:100%;" src="../../assets/images/png/xuxian.png"></cover-image>
+        <cover-view class='alert-line-3' bindtap='goComment' id="{{trashInfo.Id}}">
+            <cover-view class='no-comment' wx:if="{{ trashInfo.Comment == null }}">我要评论</cover-view>
+            <cover-view class='has-comment clear' wx:else>
+                <cover-image class='top-quotation' src="../../assets/images/png/quotation_marks.png"></cover-image>
+                <cover-view>{{ trashInfo.Comment }}</cover-view>
+                <cover-image class='bottom-quotation' src="../../assets/images/png/quotation_marks.png"></cover-image>
+            </cover-view>
+            <cover-image class='more-comment' src="../../assets/images/png/more.png"></cover-image>
+        </cover-view>
+    </cover-view>
+</cover-view>
+
+<map class="map" id="map" longitude="{{ longitude }}" iconPath="{{ iconPath }}" markers="{{ markers }}" latitude="{{ latitude }}" scale="14" bindmarkertap="tapMarker" bindtap="tapMap" show-location></map>

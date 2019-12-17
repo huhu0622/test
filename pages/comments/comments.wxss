@@ -1,0 +1,109 @@
+/* pages/comments/comments.wxss */
+.custom-header-goback image{
+  position: relative;
+  top: -2rpx;
+}
+.my-comment{
+  color: #0073D8 !important;
+}
+.custom-header{
+  background: #fff;
+}
+.comments-body{
+  margin-bottom: 150rpx;
+}
+.line {
+  box-sizing: border-box;
+}
+.line-1 {
+  padding: 50rpx 40rpx 0 30rpx;
+  font-size: 50rpx;
+}
+.line-1 view{
+  display: inline-block;
+}
+.line-1 text{
+  float: right;
+  font-size: 40rpx;
+  line-height: 1.7;
+}
+.line-2{
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.comment-item{
+  padding:50rpx 0 28rpx 0;
+  border-bottom: 1px dashed #ccc;
+}
+.comment-title{
+  font-size: 24rpx;
+  color: #222;
+  margin-bottom: 30rpx;
+}
+.middle-word{
+  color: #999;
+  padding: 0 10rpx;
+}
+.comment-content{
+  position: relative;
+  padding: 0 37rpx;
+  line-height: 1.5;
+  font-size: 32rpx;
+}
+.comment-content image{
+  position: absolute;
+  top: 0;
+  width: 24rpx;
+  height: 19rpx;
+}
+.left-quotation{
+  left: 0;
+  transform: rotate(180deg);
+}
+.right-quotation{
+  right: 0;
+}
+.send-comment{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30rpx 30rpx 30rpx 40rpx;
+  background: #fff;
+  z-index: 100;
+}
+.send-box{
+  width: 100%;
+  border: 1px solid #707070;
+  border-radius: 25px;
+  padding:10rpx;
+  box-sizing: border-box;
+}
+.send-box input{
+  float: left;
+  width: 84%;
+  height: 65rpx;
+  line-height: 65rpx;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+}
+.send-btn{
+  float: right;
+  font-size: 30rpx;
+  color: #fff;
+  background: #1dcc66;
+  width: 15%;
+  text-align: center;
+  height: 65rpx;
+  line-height: 65rpx;
+  border-radius: 25px;
+}
+.delete-pic{
+  width: 36rpx;
+  height: 36rpx;
+  vertical-align: middle;
+  margin-left: 20rpx;
+  margin-top: -5rpx;
+}

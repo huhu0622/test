@@ -1,0 +1,82 @@
+<cover-view class='headBg'>
+    <cover-image src="../../assets/images/png/photo_header_bg.png"></cover-image>
+</cover-view>
+<!-- 自定义头部 -->
+<cover-view bindtap='goBack' class='custom-header' style="height:{{headerHeight}}px;">
+    <cover-view class='custom-header-box' style="top:{{headerBottom}}px;">
+        <cover-view class='custom-header-goback'>
+            <cover-image class='back_icon' src="../../assets/images/png/goBack_white.png"></cover-image>
+        </cover-view>
+        <cover-view class='custom-header-image'>
+            <cover-image class='photo_icon' src="../../assets/images/png/mapping.png"></cover-image>
+        </cover-view>
+        <cover-view class='custom-header-title'>地图打点</cover-view>
+    </cover-view>
+</cover-view>
+<!-- 功能按钮 -->
+<cover-view class='mapping-body'>
+  <cover-view class='function-btn clear'>
+    <cover-view class='left-function'>
+        <cover-view class='left-item' bindtap='goCheck'>
+            <cover-view class='left-img-box'>
+                <cover-image src="../../assets/images/png/sheshichakan.png"></cover-image>
+            </cover-view>
+            <cover-view class='left-text'>查看</cover-view>
+        </cover-view>
+        <cover-view class='left-item' bindtap='goPhoto'>
+            <cover-view class='left-img-box'>
+                <cover-image src="../../assets/images/png/photo_white.png"></cover-image>
+            </cover-view>
+            <cover-view class='left-text'>拍照</cover-view>
+        </cover-view>
+        <cover-view class='left-item' bindtap='goVoice'>
+            <cover-view class='left-img-box'>
+                <cover-image src="../../assets/images/png/yuyin.png"></cover-image>
+            </cover-view>
+            <cover-view class='left-text'>语音</cover-view>
+        </cover-view>
+    </cover-view>
+    <cover-view class="right-function" bindtap="homeFn">
+      <cover-image src="../../assets/images/png/local.png" mode="widthFix"></cover-image>
+      <cover-view style="color:transparent;">查看</cover-view>
+    </cover-view>
+  </cover-view>
+</cover-view>
+<!-- 我要打点 -->
+<cover-view class='dot clear' bindtap='showDot'>
+    <cover-view>我要打点</cover-view>
+    <cover-image src="../../assets/images/png/click_mapping.png"></cover-image>
+</cover-view>
+<!-- 打点 -->
+<cover-view class="dot-click clear" wx:if="{{showDotClick}}">
+    <cover-view class='line-1'>
+        <cover-view>我要打点</cover-view>
+        <cover-image bindtap='submitData' src="../../assets/images/png/dot-tick.png"></cover-image>
+    </cover-view>
+    <cover-view class="white_line"></cover-view>
+    <cover-view class='line-2'>
+        <cover-view class='location-1 clear'>
+            <cover-image src="../../assets/images/png/mark_green.png"></cover-image>
+            <cover-view>当前定位的位置点</cover-view>
+        </cover-view>
+        <cover-view class='location-2'>
+            <cover-view>{{ curAddress }}</cover-view>
+        </cover-view>
+    </cover-view>
+    <cover-image mode="widthFix" style="width:100%;" src="../../assets/images/png/xuxian.png"></cover-image>
+    <cover-view class='line-3'>
+        <cover-view class='select-description'>选择您要标注的垃圾设施分类</cover-view>
+    </cover-view>
+    <cover-view class='line-4 clear'>
+        <cover-view class='select-item {{ index == trashTypeList.length - 1 ? "last-item" : "" }} ' id="{{ item.Id }}" bindtap='selectType' wx:for="{{ trashTypeList }}" wx:key="{{ index }}">
+            <cover-view class='item-box'>
+                <cover-image wx:if="{{ typeId != item.Id }}" class='image' src='../../assets/images/png/default_circle.png' ></cover-image>
+                <cover-image wx:if="{{ typeId == item.Id }}" class='image' src='../../assets/images/png/selected_circle.png'></cover-image>
+                <cover-view>{{ item.Name }}</cover-view>
+            </cover-view>
+        </cover-view>
+    </cover-view>
+</cover-view>
+
+<map class="map" id="map" markers='{{ markers }}' bindtap='tapmap' longitude="{{ longitude }}" latitude="{{ latitude }}" scale="14" show-location  bindregionchange="dragmap"></map>
+<cover-image class='move_icon' wx:if="{{ isMove }}" src='../../assets/images/png/mapping_dadian.png'></cover-image>

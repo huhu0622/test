@@ -1,0 +1,40 @@
+<!--pages/comments/comments.wxml-->
+<view class='garbage-program'>
+    <!-- 自定义头部 -->
+    <view class='custom-header clear' style="height:{{headerHeight}}px;" bindtap='goBack'>
+        <view class='custom-header-box' style="top:{{headerBottom}}px;">
+            <view class='custom-header-goback'>
+                <image src="../../assets/images/svg/goBackBlack.svg"></image>
+            </view>
+        </view>
+    </view>
+    <!-- 内容 -->
+    <view class='comments-body' style="margin-top:{{headerHeight}}px;">
+        <view class='line line-1'>
+            <view>COMMENT</view>
+            <text>{{ totalSize }}条</text>
+        </view>
+        <view class='line line-2'>
+            <view class='comment-item' wx:for="{{ commentData }}" wx:key="{{ index }}">
+                <view class='comment-title'>
+                    <text class="{{ item.Is_DisplayDel ? 'my-comment' : '' }}">{{ item.UserName }}</text>
+                    <text class='middle-word'>于</text>
+                    <text>{{ item.Add_Time }}</text>
+                    <image wx:if="{{ item.Is_DisplayDel }}" id="{{ item.Id }}" bindtap='deleteComment' class='delete-pic' src="../../assets/images/svg/delete.svg"></image>
+                </view>
+                <view class='comment-content'>
+                    <image class='left-quotation' src="../../assets/images/png/quotation_marks.png"></image>
+                    <text>{{ item.Comment }}</text>
+                    <image class='right-quotation' src="../../assets/images/png/quotation_marks.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 发送内容 固定 -->
+    <view class='send-comment' style="bottom:{{bottom}}px;">
+        <view class='send-box clear'>
+            <input value="{{ comment }}" adjust-position="{{false}}" confirm-type="done" bindconfirm="addComment" bindinput="contentChange" cursor-spacing="10" bindfocus="inputFocus" bindblur="inputBlur"></input>
+            <text class='send-btn' bindtap='addComment'>OK</text>
+        </view>
+    </view>
+</view>

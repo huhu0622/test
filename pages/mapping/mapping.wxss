@@ -1,0 +1,269 @@
+/* pages/mapping/mapping.wxss */
+
+.mapping-body {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    z-index: 10;
+    color: #fff;
+}
+
+.headBg {
+    width: 100%;
+    position: fixed;
+    z-index: 13;
+    top: 0;
+    left: 0;
+}
+
+.custom-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: #fff;
+    z-index: 15;
+}
+
+.custom-header-goback, .custom-header-image, .custom-header-title {
+    float: left;
+}
+
+.custom-header .back_icon {
+    width: 20rpx;
+    height: 34rpx;
+    margin-top: 8rpx;
+}
+
+.custom-header .photo_icon {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.map {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+}
+
+.function-btn {
+    padding: 0 47rpx 150rpx 40rpx;
+}
+
+.left-function {
+    float: left;
+}
+
+.left-item {
+    float: left;
+    text-align: center;
+    width: 100rpx;
+}
+
+.left-img-box {
+    width: 50rpx;
+    height: 50rpx;
+    border-radius: 50%;
+    background: #5ad28c;
+    padding: 14rpx;
+    box-sizing: border-box;
+    margin: 15rpx auto;
+    box-shadow: 0 0 5rpx 5rpx rgba(0,0,0,.2);
+}
+
+.left-item cover-view {
+    font-size: 28rpx;
+}
+.left-text{
+  color: #0f7038;
+  text-shadow: 0 0 5rpx rgba(0,0,0,.2);
+}
+.dot, .dot-click {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150rpx;
+    margin-bottom: -50rpx;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background: rgba(15, 112, 56, 0.6);
+    color: #fff;
+    box-sizing: border-box;
+    padding: 28rpx 47rpx 28rpx 63rpx;
+    z-index: 10;
+    transition: all .5s linear;
+}
+.green-line{
+  background: rgba(15, 112, 56, 1);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200rpx;
+  z-index: -1;
+}
+.dot cover-view, .line-1 cover-view {
+    float: left;
+    font-size: 32rpx;
+    line-height: 40rpx;
+}
+
+.dot cover-image, .line-1 cover-image {
+    float: right;
+    width: 40rpx;
+    height: 40rpx;
+    vertical-align: middle;
+    padding:5rpx 10rpx 5rpx 100rpx;
+}
+
+.dot-click {
+    padding-bottom: 75rpx;
+    height: auto;
+    z-index: 30;
+    background: rgba(15, 112, 56, 1);
+}
+.bottom0{
+  bottom: 0;
+}
+.line-1 {
+    padding-bottom: 30rpx;
+}
+.white_line{
+  width: 100%;
+  border-top: 1px solid #fff;
+  margin: 0 auto;
+}
+.line-2 {
+    padding: 29rpx 0 50rpx 0;
+}
+
+.location-1 cover-image {
+    float: left;
+    width: 21rpx;
+    height: 25rpx;
+    vertical-align: middle;
+    margin-right: 13rpx;
+    position: relative;
+    top: 2rpx;
+}
+
+.location-1 cover-view {
+    float: left;
+    font-size: 24rpx;
+}
+
+.location-1 {
+    margin-bottom: 40rpx;
+}
+
+.location-2 {
+    font-size: 36rpx;
+    color: #5ad28c;
+}
+
+.line-3 {
+    padding: 30rpx 0 10rpx 0;
+}
+.line-4{
+  margin-bottom: 30rpx;
+}
+.select-description {
+    font-size: 24rpx;
+    color: #fff;
+    padding-bottom: 5rpx;
+}
+
+.select-item {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    padding: 25rpx 8rpx;
+}
+
+.item-box {
+    border-radius: 50rpx;
+    background: #5ad28c;
+    color: #fff;
+    width: 92%;
+    padding: 22rpx 0;
+    font-size: 32rpx;
+    text-align: center;
+    height: 88rpx;
+    line-height: 88rpx;
+    box-sizing: border-box;
+    padding-left: 17rpx;
+}
+
+.item-box cover-view {
+    float: left;
+}
+
+/* .item-circle {
+    width: 35rpx;
+    height: 35rpx;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    margin:0 16rpx;
+    background: #fff;
+    position: relative;
+    line-height: 1;
+} */
+/* .item-circle .image{
+    display: none;
+} */
+
+.item-box .image{
+  float: left;
+  height:40rpx;
+  width:40rpx;
+  margin: 0 10rpx;
+}
+/* .active-select:after {
+    position: absolute;
+    top: 8rpx;
+    left: 8rpx;
+    content: ' ';
+    display: block;
+    width: 19rpx;
+    height: 19rpx;
+    border-radius: 50%;
+    background: #000;
+} */
+
+.last-item {
+    width: 100%;
+}
+.last-item .item-box{
+  width: 96%;
+}
+.last-item .item-box{
+  text-align: left;
+  padding-left: 17rpx;
+}
+.move_icon{
+    top: 50%;
+    left: 50%;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: 14;
+    width: 36rpx;
+    height: 48rpx;
+    margin-left: -18rpx;
+    margin-top: -48rpx;
+}
+.right-function{
+  float: right;
+}
+.right-function cover-image{
+  width: 42rpx;
+  height: 42rpx;
+  vertical-align: middle;
+  position: relative;
+  top: 17rpx;
+}

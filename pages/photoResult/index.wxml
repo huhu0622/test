@@ -1,0 +1,119 @@
+<view class='garbage-program'>
+    <!-- 自定义头部 -->
+    <view class='custom-header clear' style="height:{{headerHeight}}px;" bindtap='goBack'>
+        <view class='custom-header-box' style="top:{{headerBottom}}px;">
+            <view class='custom-header-goback'>
+                <image src="../../assets/images/svg/goBackWhite.svg"></image>
+            </view>
+            <view class='custom-header-image'>
+                <image src="../../assets/images/svg/photo_white.svg"></image>
+            </view>
+            <view class='custom-header-title'>
+                <text>拍照识别</text>
+            </view>
+        </view>
+    </view>
+    <!-- 内容 -->
+    <view class="result_box">
+        <van-row custom-class="photo_line">
+            <van-col span="7">
+                <view class='wrong' bindtap='switchPer'>
+                    <image wx:if="{{ !isPersonRadio }}" src="../../assets/images/svg/jiucuo.svg"></image>
+                    <text wx:if="{{ !isPersonRadio }}">纠错</text>
+                </view>
+            </van-col>
+            <van-col span="10">
+                <view class='photo'>
+                    <view>
+                        <image src='{{ objInfo.Image_Url }}'></image>
+                    </view>
+                </view>
+            </van-col>
+            <van-col span="7">
+                <view class='goon' bindtap="goonPhoto">
+                    <image wx:if="{{ !isPersonRadio }}" src="../../assets/images/svg/photo_green.svg"></image>
+                    <text wx:if="{{ !isPersonRadio }}">继续</text>
+                </view>
+            </van-col>
+        </van-row>
+        <view class='photo_name'>
+            <view>你所拍照的是</view>
+            <view>{{ objInfo.Name }}</view>
+            <view wx:if="{{ objInfo.flag == 1 }}" style="margin-top:20rpx;margin-bottom:-10rpx;" >告诉我您要识别的物品</view>
+            <view wx:else style="margin-top:20rpx;margin-bottom:-10rpx;">属于</view>
+        </view>
+        <van-transition show="{{ !isPersonRadio }}" name="fade-right" duration="{{ { enter: 300, leave: 1000 } }}">
+            <view class='computer_result'>
+                <view wx:if="{{ objInfo.Type_Alias != null }}">
+                    <block wx:if="{{ objInfo.TypeId == 1 }}">
+                        <image src="{{imgSrc.kehuishou}}"></image>
+                        <text class='kehuishou'>
+                            {{ objInfo.Type_Alias }}
+                        </text>
+                    </block>
+                    <block wx:if="{{ objInfo.TypeId == 2 }}">
+                        <image src="{{imgSrc.youhai}}"></image>
+                        <text class='youhai'>
+                            {{ objInfo.Type_Alias }}
+                        </text>
+                    </block>
+                    <block wx:if="{{ objInfo.TypeId == 3 }}">
+                        <image src="{{imgSrc.chuyu}}"></image>
+                        <text class='chuyu'>
+                            {{ objInfo.Type_Alias }}
+                        </text>
+                    </block>
+                    <block wx:if="{{ objInfo.TypeId == 4 }}">
+                        <image src="{{imgSrc.qita}}"></image>
+                        <text class='qita'>
+                            {{ objInfo.Type_Alias }}
+                        </text>
+                    </block>
+                </view>
+                <view wx:elif="{{ objInfo.flag  == 1 }}">
+                  <navigator hover-class="none" url='/pages/voiceQuery/voiceQuery'>
+                    <text style='background: #1C8347;'>
+                        语音输入
+                    </text>
+                  </navigator>
+                </view>
+                <view wx:else>
+                    <text>
+                        ????
+                    </text>
+                </view>
+                <view class='info' wx:if="{{ objInfo.Type_Sketch != null }}">
+                    <view>简述</view>
+                    <view class="info_1">{{ objInfo.Type_Sketch }}</view>
+                </view>
+                <view class='info' wx:elif="{{ objInfo.flag  == 1 }}">
+                    点击上方的“语音输入”按钮，转跳到语音查 询页面，通过语音识别来判断您要识别的物品 和垃圾分类。
+                </view>
+                <view class='info' wx:else>
+                    暂未能判断出该物品的垃圾分类，您可以点击左上的<image src="../../assets/images/svg/jiucuo.svg"></image>“纠错”告诉我们，大家共同学习。
+                </view>
+                <view class='info' style="border-top:none;" wx:if="{{ objInfo.Type_Sketch != null }}">
+                    <view>投放要求</view>
+                    <view class="info_1">{{ objInfo.Type_Put_Demand }}</view>
+                </view>
+            </view>
+        </van-transition>
+        <van-transition show="{{ isPersonRadio }}" name="fade-left" duration="{{ { enter: 300, leave: 1000 } }}" custom-class="person_result">
+            <van-radio-group value="{{ radioResult }}" bind:change="onChange">
+                <van-row custom-class="radio_row">
+                    <van-col span="12" wx:for="{{wasteList}}" wx:key="index">
+                        <view class='radio'>
+                            <van-radio name="{{ item.Id }}" use-icon-slot>
+                                <image slot="icon" src="{{ radioResult[0] == item.Id ? icon.active : icon.normal }}" mode='widthFix' />{{ item.Alias }}
+                            </van-radio>
+                        </view>
+                    </van-col>
+                </van-row>
+            </van-radio-group>
+            <view class='submit_box'>
+                <button bindtap='submitData'>确认</button>
+                <button bindtap='cancelData'>取消</button>
+            </view>
+        </van-transition>
+    </view>
+</view>

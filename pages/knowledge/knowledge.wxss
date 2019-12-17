@@ -1,0 +1,57 @@
+/* pages/knowledge/knowledge.wxss */
+.custom-header{
+  background: #fff;
+}
+.line-1 {
+    padding: 50rpx 0 50rpx 30rpx;
+    font-size: 50rpx;
+}
+.line-2{
+  padding: 0 30rpx;
+}
+.line-item{
+  padding-top: 30rpx;
+  padding-bottom: 38rpx;
+  border-bottom: 1px dashed #ccc;
+}
+.knowledge-img{
+  width: 90%;
+  height: 180rpx;
+  border-radius: 8px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.knowlwdge-title{
+  color: #222;
+  font-size: 32rpx;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+	-webkit-box-orient:vertical;
+  overflow:hidden;
+  line-height: 1.5;
+}
+.knowlwdge-content{
+  color: #999;
+  font-size: 26rpx;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+	-webkit-box-orient:vertical;
+  overflow:hidden;
+  margin-top: 20rpx;
+  line-height: 1.3;
+}
+.challenge-btn{
+  width: 100%;
+  border-radius: 15px;
+  background: #464646;
+  color: #fff;
+  padding:20rpx 0;
+  text-align: center;
+}
+.challenge-btn view{
+  font-size: 48rpx;
+}
+.challenge-btn text{
+  font-size: 28rpx;
+}

@@ -1,0 +1,106 @@
+.take-photo-body {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    z-index: 10;
+    color: #fff;
+    text-align: center;
+}
+.headBg {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 13;
+}
+.take-photo-body .bg{
+    position: fixed;
+    z-index: 14;
+    top: 0;
+    left: 0;
+}
+
+.garbage-program {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 14;
+}
+
+.custom-header {
+    position: fixed;
+    top:0;
+    left: 0;
+    color: #fff;
+    z-index: 15;
+}
+
+.custom-header-goback,.custom-header-image,.custom-header-title{
+    float: left
+}
+.custom-header-image{
+  position: relative;
+  top: 5rpx;
+}
+.custom-header .back_icon{
+    width: 20rpx;
+    height: 34rpx;
+    margin-top: 8rpx;
+}
+.custom-header .photo_icon{
+  width: 45rpx;
+  height: 37rpx;
+}
+
+.camera {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.photo-title {
+    font-size: 32rpx;
+    /* margin-top: 130rpx; */
+    /* margin-bottom: 80rpx; */
+    position: absolute;
+    top: 214rpx;
+    width: 100%;
+}
+
+.photo-description {
+    font-size: 24rpx;
+    /* margin-top: 60rpx; */
+    position: absolute;
+    bottom: 270rpx;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.take-photo {
+    position: absolute;
+    bottom: 80rpx;
+    left: 0;
+    width: 100%;
+}
+
+.take-photo cover-image {
+    width: 124rpx;
+    height: 124rpx;
+    margin: 0 auto;
+}
+
+.photo-box {
+    width: 600rpx;
+    height: 600rpx;
+    background: var(--box-bg);
+    outline: 2500px solid #000;
+    margin: 0 auto;
+}

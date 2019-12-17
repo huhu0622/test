@@ -1,0 +1,46 @@
+<!--pages/knowledge/knowledge.wxml-->
+<view class='garbage-program'>
+    <!-- 自定义头部 -->
+    <view class='custom-header clear' style="height:{{headerHeight}}px;" bindtap='goBack'>
+        <view class='custom-header-box' style="top:{{headerBottom}}px;">
+            <view class='custom-header-goback'>
+                <image src="../../assets/images/svg/goBackBlack.svg"></image>
+            </view>
+            <view class='custom-header-image'>
+                <image src="../../assets/images/svg/kepuzhishi.svg"></image>
+            </view>
+            <view class='custom-header-title'>
+                <text>科普知识</text>
+            </view>
+        </view>
+    </view>
+    <!-- 内容 -->
+    <view class='knowledge-body' style="margin-top:{{headerHeight}}px;">
+        <view class='line line-1'>
+            <view>KNOWLEDGE</view>
+        </view>
+        <view class='line-2'>
+            <block wx:for="{{ newsList }}" wx:key="{{ index }}">
+                <van-row custom-class="line-item" bindtap="goDetail" data-id="{{ item.Id }}" wx:if="{{ item.ImgUrl != '' }}">
+                    <van-col span="12">
+                        <view class='knowledge-img' style="background-image:url({{ item.ImgUrl }});"></view>
+                    </van-col>
+                    <van-col span="12">
+                        <view class='knowlwdge-title'>{{ item.Title }}</view>
+                        <text class='knowlwdge-content'>{{ item.Zhaiyao }}</text>
+                    </van-col>
+                </van-row>
+                <van-row custom-class="line-item" bindtap="goDetail" data-id="{{ item.Id }}" wx:else>
+                    <van-col span="24" custom-class="knowlwdge-title">{{ item.Title }}</van-col>
+                    <van-col span="24" custom-class="knowlwdge-content">{{ item.Zhaiyao }}</van-col>
+                </van-row>
+                <van-row custom-class="line-item" wx:if="{{ (newsList.length < 3 && index == newsList.length - 1 ) || index == 1 }}">
+                    <view class='challenge-btn' bindtap='goChallenge'>
+                        <view>CHALLENGE</view>
+                        <text>向垃圾发起挑战！</text>
+                    </view>
+                </van-row>
+            </block>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,163 @@
+/* pages/knowledgeSubject/knowledgeSubject.wxss */
+.challenge-img image{
+  width: 100%;
+  vertical-align: middle;
+}
+.garbage{
+  padding: 30rpx 0;
+  text-align: center;
+  position: relative;
+  color: #fff;
+  background: #32a05f;
+  margin-top: -2rpx;
+}
+.success-num{
+  position: absolute;
+  top: -140rpx;
+  right: 40rpx;
+  width: 148rpx;
+  height: 148rpx;
+  border-radius: 50%;
+  background: #ff9b29;
+  color: #fff;
+  text-align: center;
+}
+.success-num view{
+  font-size: 28rpx;
+  padding-top: 30rpx;
+}
+.success-num text{
+  font-size: 40rpx;
+}
+.garbage-title{
+  font-size: 50rpx;
+  font-weight: bold;
+  margin-bottom: 12rpx;
+}
+.garbage-attribute{
+  font-size: 28rpx;
+}
+.select-garbage{
+  position: relative;
+}
+.select-garbage>image{
+  width: 100%;
+}
+.select-list{
+  position: absolute;
+  bottom:-120rpx;
+  height: 400rpx;
+  width: 100%;
+}
+.select-item{
+  text-align: center;
+}
+.select-item>image{
+  width: 70%;
+}
+.radio-img{
+  display: inline-block !important;
+  padding: 28rpx 0 5rpx 0;
+  width: 100%;
+}
+.radio-img image{
+  width: 65%;
+}
+.select-garbage-title{
+  font-size: 24rpx;
+  margin-top:15rpx;
+  font-weight:bold;
+}
+.kehuishou{
+  color: #0C78BA;
+  background: transparent !important;
+}
+.chuyu{
+  color: #1C7514;
+  background: transparent !important;
+}
+.youhai{
+  color: #DE6B35;
+  background: transparent !important;
+}
+.qita{
+  color: #3F3F3F;
+  background: transparent !important;
+}
+.submit-sure{
+  margin-top: 130rpx;
+}
+.submit-sure text{
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 38rpx;
+  background: #1c8347;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 3;
+}
+.alert-mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.8);
+  z-index: 100;
+}
+.alert{
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items:center;
+}
+.success-fail{
+  box-sizing: border-box;
+  width: 90%;
+  border-radius: 10px;
+  color: #fff;
+  padding: 26rpx 35rpx;
+}
+.success-bg{
+  background: #65ba61;
+}
+.fail-bg{
+  background: #666;
+}
+.alert-title-1{
+  font-size: 24rpx;
+}
+.alert-title-2{
+  font-size: 52rpx;
+}
+.alert-title-3{
+  font-size: 40rpx;
+  margin-top: 46rpx;
+}
+.alert-title-4{
+  font-size: 34rpx;
+}
+.success-btn{
+  width: 100%;
+  position: relative;
+  top: 50rpx;
+}
+.go-on{
+  display: inline-block;
+  width: 70%;
+  background: #1c8347;
+  text-align: center;
+  line-height: 2.5;
+  border-radius: 10px;
+}
+.go-next{
+  display: inline-block;
+  width: 25%;
+  margin-left: 20rpx;
+  text-align: center;
+  line-height: 2.5;
+  border-radius: 10px;
+  background: #c5c5c5;
+}

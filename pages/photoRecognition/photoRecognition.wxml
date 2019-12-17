@@ -1,0 +1,33 @@
+<!--pages/photoRecognition/photoRecognition.wxml-->
+<cover-view class='headBg'>
+  <cover-image src="../../assets/images/png/photo_header_bg.png"></cover-image>
+</cover-view>
+<!-- 自定义头部 -->
+<cover-view bindtap='goBack' class='custom-header' style="height:{{headerHeight}}px;">
+  <cover-view class='custom-header-box' style="top:{{headerBottom}}px;">
+    <cover-view class='custom-header-goback'>
+      <cover-image class='back_icon' src="../../assets/images/png/goBack_white.png"></cover-image>
+    </cover-view>
+    <cover-view class='custom-header-image'>
+      <cover-image class='photo_icon' src="../../assets/images/png/photo_white.png"></cover-image>
+    </cover-view>
+    <cover-view class='custom-header-title'>拍照识别</cover-view>
+  </cover-view>
+</cover-view>
+<cover-view class='take-photo-body'>
+    <cover-image src="../../assets/images/png/photo_bg.png"></cover-image>
+    <cover-view class='bg'>
+
+    </cover-view>
+    <cover-view class='garbage-program'>
+        <!-- 内容 -->
+        <cover-view class='photo-title'>你是什么垃圾，轻松一拍即可知晓</cover-view>
+        <cover-view class='photo-description'>请将所拍的物品放置在方框内</cover-view>
+        <cover-view class='take-photo'>
+            <cover-image bindtap="takePhoto" src="../../assets/images/png/take_photo.png"></cover-image>
+        </cover-view>
+    </cover-view>
+
+</cover-view>
+
+<camera class='camera' device-position="back" flash="off" binderror="error"></camera>

@@ -1,0 +1,80 @@
+<!--pages/myInfo/myInfo.wxml-->
+<view class='garbage-program'>
+    <!-- 自定义头部 -->
+    <view class='custom-header clear' style="height:{{headerHeight}}px;" bindtap='goBack'>
+        <view class='custom-header-box' style="top:{{headerBottom}}px;">
+            <view class='custom-header-goback'>
+                <image src="../../assets/images/svg/goBackBlack.svg"></image>
+            </view>
+            <view class='custom-header-image'>
+                <image src="../../assets/images/svg/mineInfo.svg"></image>
+            </view>
+            <view class='custom-header-title'>
+                <text>我的信息</text>
+            </view>
+        </view>
+    </view>
+    <!-- 内容 -->
+    <view class='mine-info-body' style="margin-top:{{headerHeight}}px;">
+        <view class='line line-1'>
+            <view>MY PAGE</view>
+        </view>
+        <!-- <view class='grey'></view> -->
+        <view class='line line-2 clear' wx:if="{{ userInfo == '' }}">
+            <button class='login-btn' type='primary' open-type='getUserInfo' bindgetuserinfo='getUserInfo'>授权登录</button>
+        </view>
+        <view class='line line-2 clear' wx:else>
+            <view class='left'>
+                <image src="{{ userInfo.avatarUrl }}"></image>
+            </view>
+            <view class='right'>
+                <view class='personal-name'>{{ userInfo.nickName }}</view>
+                <view class='ranking-box'>
+                    <text>我的当前排名：</text>
+                    <text class='ranking-num'>{{ userPlatformData.PVSort }}</text>
+                    <image src="../../assets/images/svg/mine_ranking.svg"></image>
+                </view>
+                <view class='description'>排名依据：</view>
+                <view class="description">打点+纠错+成功挑战三项次数总和排名</view>
+            </view>
+        </view>
+        <view class='line line-3 clear'>
+            <view class='item'>
+                <text class='global-icon'>{{ userPlatformData.TrashTimes || 0 }}</text>
+                <view>打点次数</view>
+                <view class='oblique-line'></view>
+            </view>
+            <view class='item'>
+                <text class='global-icon'>{{ userPlatformData.CorrectTimes || 0 }}</text>
+                <view>成功纠错</view>
+                <view class='oblique-line'></view>
+            </view>
+            <view class='item last-item'>
+                <text class='global-icon'>{{ userPlatformData.Challenge || 0 }}</text>
+                <view>成功挑战</view>
+            </view>
+        </view>
+        <view class='line line-4 clear'>
+            <view class='classification-item'>
+                <view>
+                    <image src="../../assets/images/png/garbage_1.png" mode='widthFix'></image>
+                    <view class='classification-title'>可降解回收纸袋垃圾</view>
+                    <view class='shopcart'>敬请期待...</view>
+                    <!-- <view class='shopcart'>
+            <image src="../../assets/images/svg/kepuzhishi.svg"></image>
+          </view> -->
+                </view>
+            </view>
+            <view class='classification-item'>
+                <view>
+                    <image src="../../assets/images/png/garbage_2.png" mode='widthFix'></image>
+                    <view class='classification-title'>分类垃圾桶-可回收垃圾</view>
+                    <view class='shopcart'>敬请期待...</view>
+                    <!-- <view class='shopcart'>
+            <image src="../../assets/images/svg/kepuzhishi.svg"></image>
+          </view> -->
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

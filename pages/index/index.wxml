@@ -1,0 +1,115 @@
+<view class='garbage-program'>
+    <!-- 自定义头部 -->
+    <view class='custom-header' style="height:{{headerHeight}}px">
+    </view>
+    <!-- 内容开始 -->
+    <view class='content'>
+        <image mode='widthFix' src='../../assets/images/png/index_bg.png'></image>
+        <view class='info'>
+            <van-row custom-class="title">
+                <van-col span="16">
+                    <view>WHERE'S</view>
+                    <view>THE GARBAGE</view>
+                    <view>GOING 垃圾去哪啦?</view>
+                </van-col>
+                <van-col span="8">
+                    <image src="../../assets/images/svg/index_lajitong.svg"></image>
+                </van-col>
+            </van-row>
+            <view class='data_list'>
+                <van-row>
+                    <van-col span="8">
+                        <view class="data_title">垃圾设施标记</view>
+                        <view class='global-icon'>{{ indexData.TrashNum }}</view>
+                    </van-col>
+                    <van-col span="8">
+                        <view class="data_title">垃圾分类种类</view>
+                        <view class='global-icon'>{{ indexData.WasteTypeNum }}</view>
+                    </van-col>
+                    <van-col span="8">
+                        <view class="data_title">已有环境斗士</view>
+                        <view class='global-icon'>{{ indexData.Users }}</view>
+                    </van-col>
+                </van-row>
+            </view>
+            <view class='fn_list'>
+                <van-row>
+                    <van-col span="12">
+                        <navigator hover-class="none" url='/pages/mapping/mapping'>
+                            <view class="fn_icon fn_icon_left">
+                                <image src="../../assets/images/svg/index_dadian.svg"></image>
+                                <text>地图打点</text>
+                            </view>
+                        </navigator>
+                    </van-col>
+                    <van-col span="12">
+                        <navigator hover-class="none" url='/pages/checkFacilities/checkFacilities'>
+                            <view class="fn_icon fn_icon_right">
+                                <image src="../../assets/images/svg/index_sheshichakan.svg"></image>
+                                <text>设施查看</text>
+                            </view>
+                        </navigator>
+                    </van-col>
+                </van-row>
+                <van-row>
+                    <van-col span="12">
+                        <navigator hover-class="none" url='/pages/photoRecognition/photoRecognition'>
+                            <view class="fn_icon fn_icon_left">
+                                <image src="../../assets/images/svg/photo_white.svg"></image>
+                                <text>拍照识别</text>
+                            </view>
+                        </navigator>
+                    </van-col>
+                    <van-col span="12">
+                        <navigator hover-class="none" url='/pages/voiceQuery/voiceQuery'>
+                            <view class="fn_icon fn_icon_right">
+                                <image src="../../assets/images/svg/yuyinchaxun.svg"></image>
+                                <text>语音查询</text>
+                            </view>
+                        </navigator>
+                    </van-col>
+                </van-row>
+            </view>
+            <view class="index_dashed_line"></view>
+            <view class='news_list'>
+                <swiper class='slide-container' next-margin="15px">
+                    <swiper-item wx:for="{{ newsList }}" wx:key="{{ index }}">
+                        <van-row custom-class="news" wx:for="{{ item }}" wx:for-item="item1" wx:for-index="idx" wx:key="{{ idx }}">
+                            <navigator url='/pages/knowledgeDetails/knowledgeDetails?newsId={{ item1.Id }}&info=index'>
+                                <block wx:if="{{item1.ImgUrl!=''}}">
+                                    <van-col span="11">
+                                        <view class='news_img' style="background-image:url({{ item1.ImgUrl }});"></view>
+                                    </van-col>
+                                    <van-col span="13">
+                                        <view class='news_title'>{{ item1.Title }}</view>
+                                        <view class='news_content'>{{ item1.Zhaiyao }}</view>
+                                    </van-col>
+                                </block>
+                                <block wx:if="{{item1.ImgUrl==''||item1.ImgUrl==null||item1.ImgUrl==undefined}}">
+                                    <van-col span="24">
+                                        <view class='news_title'>{{ item1.Title }}</view>
+                                        <view class='news_content'>{{ item1.Zhaiyao }}</view>
+                                    </van-col>
+                                </block>
+                            </navigator>
+                        </van-row>
+                    </swiper-item>
+                </swiper>
+            </view>
+            <!-- 内容 -->
+            <view class='index-body' style="margin-top:30rpx; margin-bottom:30rpx;">
+                <view class='index-line-4'>
+                    <view class='knowledge' bindtap='goKnowledge'>
+                        <image src="../../assets/images/svg/kepuzhishi.svg"></image>
+                        <text>科普知识</text>
+                    </view>
+                    <view class='mine-info' bindtap='goMyInfo'>
+                        <image src="../../assets/images/svg/mineInfo.svg"></image>
+                        <text>我的信息</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+</view>

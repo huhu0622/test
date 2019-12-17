@@ -1,0 +1,39 @@
+<view class='garbage-program'>
+    <!-- 自定义头部 -->
+    <view class='custom-header' style="height:{{headerHeight}}px">
+    </view>
+    <!-- 内容开始 -->
+    <view class='content'>
+        <!-- <image mode='widthFix' src='../../assets/images/index_bg.png'></image>
+        <view class='info'>
+            <van-row custom-class="title">
+                <van-col span="16">
+                    <view>WHERE'S</view>
+                    <view>THE GARBAGE?</view>
+                    <view>垃圾去哪啦?</view>
+                </van-col>
+                <van-col span="8">
+                    ASDF
+                </van-col>
+            </van-row>
+        </view>
+        <view class=''></view> -->
+        <button bindtap='socket'>scoket</button>
+        <button bindlongtap='record'>长按录音</button>
+        <button bindtap='endRecord'>end record</button>
+        <input value='{{ record64 }}'></input>
+    </view>
+    <!-- 内容 -->
+    <view class='index-body' style="margin-top:{{headerHeight}}px">
+        <view class='index-line-4'>
+            <view class='knowledge'>
+                <image src="../../assets/images/svg/kepuzhishi.svg"></image>
+                <text>科普知识</text>
+            </view>
+            <view class='mine-info' bindtap='goMyInfo'>
+                <image src="../../assets/images/svg/mineInfo.svg"></image>
+                <text>我的信息</text>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,91 @@
+<!--pages/knowledgeSubject/knowledgeSubject.wxml-->
+<view class='garbage-program'>
+    <!-- 自定义头部 -->
+    <view class='custom-header clear' style="height:{{headerHeight}}px;" bindtap='goBack'>
+        <view class='custom-header-box' style="top:{{headerBottom}}px;">
+            <view class='custom-header-goback'>
+                <image src="../../assets/images/svg/goBackBlack.svg"></image>
+            </view>
+            <view class='custom-header-image'>
+                <image src="../../assets/images/svg/kepuzhishi.svg"></image>
+            </view>
+            <view class='custom-header-title'>
+                <text>科普知识</text>
+            </view>
+        </view>
+    </view>
+    <!-- 内容 -->
+    <view class='challenge-body'>
+        <view class='challenge-img'>
+            <image src="../../assets/images/png/challenge_bg.png" mode='widthFix'></image>
+        </view>
+        <view class='garbage'>
+            <view class='success-num'>
+                <view>成功次数</view>
+                <text>{{ questionInfo.ChallegeTimes }}</text>
+            </view>
+            <view class='garbage-title'>{{ questionInfo.QuestionName }}</view>
+            <text class='garbage-attribute'>属于以下哪种垃圾</text>
+        </view>
+        <view class='select-garbage'>
+            <image src="../../assets/images/png/challenge_bg_1.png" mode='widthFix'></image>
+            <van-row custom-class="select-list">
+                <block wx:for="{{ questionInfo.Answers }}" wx:key="{{ index }}">
+                    <van-col span="6" custom-class="select-item" wx:if="{{ item.Id == 1 }}">
+                        <view>
+                            <van-radio custom-class="radio-img" use-icon-slot value="{{ radio }}" name="{{ item.Id }}" bind:change="onChange">
+                                <image slot="icon" src="{{ radio == item.Id ? icon4.active : icon4.normal }}" mode='widthFix'/>
+                            </van-radio>
+                        </view>
+                        <view class='select-garbage-title kehuishou'>可回收物</view>
+                    </van-col>
+                    <van-col span="6" custom-class="select-item" wx:if="{{ item.Id == 2 }}">
+                        <view>
+                            <van-radio custom-class="radio-img" use-icon-slot value="{{ radio }}" name="{{ item.Id }}" bind:change="onChange">
+                                <image slot="icon" src="{{ radio == item.Id ? icon1.active : icon1.normal }}" mode='widthFix'/>
+                            </van-radio>
+                        </view>
+                        <view class='select-garbage-title youhai'>有害垃圾</view>
+                    </van-col>
+                    <van-col span="6" custom-class="select-item" wx:if="{{ item.Id == 3 }}">
+                        <view>
+                            <van-radio custom-class="radio-img" use-icon-slot value="{{ radio }}" name="{{ item.Id }}" bind:change="onChange">
+                                <image slot="icon" src="{{ radio == item.Id ? icon3.active : icon3.normal }}" mode='widthFix'/>
+                            </van-radio>
+                        </view>
+                        <view class='select-garbage-title chuyu'>厨余垃圾</view>
+                    </van-col>  
+                    <van-col span="6" custom-class="select-item" wx:if="{{ item.Id == 4 }}">
+                        <view>
+                            <van-radio custom-class="radio-img" use-icon-slot value="{{ radio }}" name="{{ item.Id }}" bind:change="onChange">
+                                <image slot="icon" src="{{ radio == item.Id ? icon2.active : icon2.normal }}" mode='widthFix'/>
+                            </van-radio>
+                        </view>
+                        <view class='select-garbage-title qita'>其他垃圾</view>
+                    </van-col>
+                </block>
+            </van-row>
+        </view>
+        <view class='submit-sure' bindtap='submitQuestion'>
+            <text>确认提交</text>
+        </view>
+    </view>
+    <!-- 弹出框 -->
+    <van-transition show="{{ show }}" name="slide-down" custom-class="alert-mask">
+        <view class='alert'>
+            <view class='success-fail {{ result.Key ? "success-bg" : "fail-bg" }}'>
+                <text class='alert-title-1'>WASITE SORTING CHALLENGE</text>
+                <view class='alert-title-2' wx:if="{{ result.Key }}">CONGRATULATIONS</view>
+                <view class='alert-title-2' wx:else>SO SORRY</view>
+                <view class='alert-title-3' wx:if="{{ result.Key }}">恭喜您回答正确</view>
+                <view class='alert-title-3' wx:else>抱歉您回答不正确</view>
+                <view class='alert-title-4' wx:if="{{ result.Key }}">成功次数 +1 , 已达 {{ result.Value }} 次!</view>
+                <view class='alert-title-4' wx:else>成功次数依然是 {{ result.Value }} 次!</view>
+                <view class='success-btn'>
+                    <view class='go-on' bindtap='closeMask' id="1">继续挑战</view>
+                    <view class='go-next' bindtap='next'>下次再说</view>
+                </view>
+            </view>
+        </view>
+    </van-transition>
+</view>

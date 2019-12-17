@@ -1,0 +1,30 @@
+<!--pages/knowledgeDetails/knowledgeDetails.wxml-->
+<view class='garbage-program'>
+    <!-- 自定义头部 -->
+    <view class='custom-header clear' style="height:{{headerHeight}}px;" bindtap='goBack'>
+        <view class='custom-header-box' style="top:{{headerBottom}}px;">
+            <view class='custom-header-goback'>
+                <image wx:if="{{source!='share'}}" src="../../assets/images/svg/goBackBlack.svg"></image>
+                <image bindtap="goHome" wx:if="{{source=='share'}}" class="home-icon" src="../../assets/images/png/home.png"></image>
+            </view>
+        </view>
+    </view>
+    <!-- 内容 -->
+    <view class='knowledge-detail-body'>
+        <view class='detail-img'>
+            <image src="{{ newsDetail.ImgUrl == ''?'../../assets/images/png/no_img.jpg':newsDetail.ImgUrl }}" mode='widthFix'></image>
+        </view>
+        <view class='detail-content'>
+            <view class='detail-share'>
+                <button open-type='share'>
+                    <image src="../../assets/images/svg/knowledge_share.svg"></image>
+                </button>
+            </view>
+            <view class='detail-title'>{{ newsDetail.Title }}</view>
+            <!-- <view class='details'>
+              {{ newsDetail.Zhaiyao }}
+            </view> -->
+            <rich-text class="details" nodes="{{ newsContent }}"></rich-text>
+        </view>
+    </view>
+</view>
