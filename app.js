@@ -18,7 +18,7 @@ App({
     onLaunch: function() {
         let that = this;
 		removeStorageSync("userInfo")
-        //判断是不是刘海屏asdfghjkl
+        //判断是不是刘海屏123123123123
         try {
             const res = wx.getSystemInfoSync()
 
